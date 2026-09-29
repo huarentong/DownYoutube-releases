@@ -6,6 +6,15 @@ DownYoutube 是 YouTube 下载工具，界面为简体中文，支持 macOS 和 
 
 请只下载你有权保存的内容。
 
+## 下载
+
+点下面的文件直接下载最新版（0.1.1）：
+
+- **macOS**（12 或更高）：[⬇ DownYoutube-0.1.1-macOS.dmg](https://github.com/huarentong/DownYoutube-releases/releases/download/v0.1.1/DownYoutube-0.1.1-macOS.dmg)（154 MB）
+- **Windows**（10 或更高，64 位）：[⬇ DownYoutube-0.1.1-Windows-x64.zip](https://github.com/huarentong/DownYoutube-releases/releases/download/v0.1.1/DownYoutube-0.1.1-Windows-x64.zip)（114 MB）
+
+也可以用下面的一行命令自动下载并安装（推荐，会自动校验、放行安全提示）。历史版本见 [Releases](https://github.com/huarentong/DownYoutube-releases/releases)。
+
 ## 安装（macOS）
 
 系统要求：macOS 12 或更高版本；Apple 芯片和 Intel 芯片的 Mac 都支持。
