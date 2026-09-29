@@ -3,7 +3,9 @@
 DownYoutube 的安装包内置了下列程序。它们各自遵循自己的许可证，与 DownYoutube 本身无关。
 安装包内也有一份声明和各程序的许可证文本：macOS 版在 `DownYoutube.app/Contents/Resources/licenses/`。
 
-## macOS 版
+## 内置组件
+
+macOS 版是通用二进制（Apple 芯片 + Intel），Windows 版是 64 位；两者的 yt-dlp、ffmpeg、deno 版本相同。
 
 | 组件 | 版本 | 许可证 | 来源 |
 | --- | --- | --- | --- |
@@ -40,3 +42,13 @@ DownYoutube 的安装包内置了下列程序。它们各自遵循自己的许�
 | ffmpeg.zip 9.0.2（x86_64） | `7c6b4125b191cbf773832dc51f424cf2b6bb7da43007d1e066f95909e47cacd4` |
 
 deno 与 FFmpeg 的两个架构版本会用 `lipo` 合并成一个通用二进制，并重新做 ad-hoc 签名。
+
+Windows 版（x64）内置以下文件，构建时同样核对 SHA-256：
+
+| 文件 | SHA-256 |
+| --- | --- |
+| yt-dlp.exe 2026.08.19 | `66674953fe251b89f4d08c5f0e35e0728679bd67ab3d7d05c0562af101dd3e7a` |
+| deno-x86_64-pc-windows-msvc.zip v2.9.7 | `a0c3101b4158d1dfb7d6a78a7bf0f3de80c96bb423c152beec8beb22786f2238` |
+| ffmpeg-9.0.2-essentials_build.zip（Gyan，GPL） | `60f467265b1e312373dbcd92200c2618a74850f98d3d078e94296bb3fa2047ba` |
+
+Windows 版的 ffmpeg 取自 Gyan.dev 的 essentials 构建（https://www.gyan.dev/ffmpeg/builds/ ，GPL）。

@@ -1,6 +1,6 @@
 # DownYoutube
 
-DownYoutube 是 YouTube 下载工具，界面为简体中文。它调用本机的 yt-dlp 和 ffmpeg，把视频保存为可以直接播放的 MP4，也可以只保存音频、下载字幕或整个播放列表。
+DownYoutube 是 YouTube 下载工具，界面为简体中文，支持 macOS 和 Windows。它调用本机的 yt-dlp 和 ffmpeg，把视频保存为可以直接播放的 MP4，也可以只保存音频、下载字幕或整个播放列表。
 
 **这个仓库只发布安装包。DownYoutube 的源代码不公开，也不是开源软件。**
 
@@ -39,6 +39,37 @@ sh install.sh
 
 把 `/Applications/DownYoutube.app` 移到废纸篓。设置、下载记录和下载历史保存在 `~/Library/Application Support/DownYoutube/`，不需要时可以一并删除。
 
+## 安装（Windows）
+
+系统要求：Windows 10 或更高版本（64 位）。
+
+### 方法一：一行命令（推荐，不会被 SmartScreen 拦截）
+
+按 `Win + X`，选「终端」或「Windows PowerShell」，粘贴并运行：
+
+```powershell
+irm https://raw.githubusercontent.com/huarentong/DownYoutube-releases/main/install.ps1 | iex
+```
+
+脚本会下载最新版本、核对 SHA-256，解压到 `%LOCALAPPDATA%\Programs\DownYoutube`，并在开始菜单创建快捷方式，不需要管理员权限。装好后在开始菜单打开 DownYoutube 即可。
+
+如果提示「无法加载脚本，因为在此系统上禁止运行脚本」，先运行一次下面这句再重试：
+
+```powershell
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+```
+
+### 方法二：从浏览器下载
+
+1. 在 [Releases](https://github.com/huarentong/DownYoutube-releases/releases/latest) 下载 `DownYoutube-<版本>-Windows-x64.zip`，解压到任意文件夹（例如「文档」下）。
+2. 双击里面的 `DownYoutube.exe`。第一次打开时 Windows 可能弹出蓝色的「Windows 已保护你的电脑」（SmartScreen）。这是因为程序没有购买代码签名证书，文件本身没有问题。点「更多信息」，再点「仍要运行」即可，只需做一次。（用上面的一行命令安装则不会出现此提示。）
+
+不要把整个文件夹里的文件拆开移动；`DownYoutube.exe` 需要和同目录的 `_internal`、`bin` 文件夹在一起。
+
+### 卸载
+
+删除安装目录（默认 `%LOCALAPPDATA%\Programs\DownYoutube`）和开始菜单里的 DownYoutube 快捷方式。设置、下载记录和下载历史保存在 `%APPDATA%\DownYoutube`，不需要时可以一并删除。
+
 ## 功能
 
 - 单个视频和播放列表（可只下载指定序号范围）
@@ -52,7 +83,7 @@ DownYoutube 只是调用本机的 yt-dlp 和 ffmpeg 来下载，不破解 DRM，
 
 ## 第三方软件
 
-安装包里带有 yt-dlp、ffmpeg 和 deno。其中 ffmpeg 是 GPL 构建，各程序的许可证和 ffmpeg 的源代码获取方式见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
+安装包里带有 yt-dlp、ffmpeg 和 deno（macOS 与 Windows 版本相同：yt-dlp 2026.08.19、ffmpeg 9.0.2、deno 2.9.7）。其中 ffmpeg 是 GPL 构建，各程序的许可证和 ffmpeg 的源代码获取方式见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
 
 ## 问题反馈
 
